@@ -38,7 +38,9 @@ func _ready():
 	
 	# Create the story. The "loaded" signal will be emitted once the Ink story is ready.
 	_ink_player.create_story()
-
+	
+	#$Camera2D.zoom = Vector2(0.59,0.9)
+	#$Camera2D.position(0,0)
 
 # ############################################################################ #
 # Signal Receivers
@@ -90,6 +92,7 @@ func _continue_story():
 			#print(choice.tags)
 			var button = choice_btn.instantiate()
 			button.text = choice.text
+			button.add_theme_color_override("font_color", Color.WHITE)
 			
 			#button.connect("pressed", self, "_index_choose", [button]) GODOT v3
 			button.connect("pressed", Callable(self, "_index_choice").bind(button))
@@ -133,14 +136,46 @@ func _close_btn():
 
 # If you want to observe certain variables in your Ink story:
 func _observe_variables():
-	_ink_player.observe_variables(["chapterTwo"], self, "_variable_changed")
+	_ink_player.observe_variables(["chapterTwo", "teddyCheer"], self, "_variable_changed")
 
 func _variable_changed(variable_name, new_value):
 
 	if variable_name == "chapterTwo" and new_value == true:
-		$Camera2D.zoom = Vector2(.5, .76)
+		$Camera2D.zoom = Vector2(.59, .375)
+		$Camera2D.position = Vector2(977, -44)
+	if variable_name == "teddyCheer" and new_value == true:
+		$Game/CharacterBody2D/AnimatedSprite2D.play("happy")
+	if variable_name == "teddyChill" and new_value == true:
+		$Game/CharacterBody2D/AnimatedSprite2D.play("default")
+	
 	#if variable_name == "f_happy" and new_value == true:
 		#$Female.texture = f_happy_icon
 	#if variable_name == "f_happy" and new_value == false:
 		#$Female.texture = f_body_icon
 	print("Variable '%s' changed to: %s" % [variable_name, new_value])
+	
+	
+func _on_save_pressed() -> void:
+	_ink_player.save_state_to_path("res://saves/save.save")
+	
+	var file = FileAccess.open("res://saves/dialog_text.save", FileAccess.WRITE)
+	file.store_string($ColorRect/Label.text)
+	file.close()
+	pass # Replace with function body.
+
+
+func _on_load_pressed() -> void:
+	if FileAccess.file_exists("res://saves/save.save"):
+		_ink_player.load_state_from_path("res://saves/save.save")
+		for child in $ColorRect/Choice_Container.get_children():
+			child.queue_free()
+			_btn.erase(child)
+		var file = FileAccess.open("res://saves/dialog_text.save", FileAccess.READ)
+		$ColorRect/Label.text = file.get_as_text()
+		_continue_story()
+	pass # Replace with function body.
+
+
+func _on_start_over_pressed() -> void:
+	get_tree().reload_current_scene()
+	pass # Replace with function body.

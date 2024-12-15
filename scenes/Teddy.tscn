@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://t4qxh63ay8my"]
+
+[ext_resource type="Texture2D" uid="uid://dnaqgkgkvih7f" path="res://assets/sprites/Teddy.png" id="1_xp2ds"]
+[ext_resource type="Script" path="res://scenes/teddy.gd" id="1_ye4vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xlo1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv5vg"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(288, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a57xt"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(304, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e1ki"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(320, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68wit"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(336, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpmse"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq77a"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(368, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybck2"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(288, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs1gy"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(304, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m0v7"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(320, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmou8"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(336, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uppyx"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(352, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsib1"]
+atlas = ExtResource("1_xp2ds")
+region = Rect2(368, 256, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83mjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv5vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a57xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e1ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68wit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpmse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq77a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybck2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs1gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m0v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmou8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uppyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsib1")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}]
+
+[node name="Teddy" type="CharacterBody2D"]
+script = ExtResource("1_ye4vk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1xlo1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_83mjr")
+animation = &"happy"
+frame_progress = 0.665654
