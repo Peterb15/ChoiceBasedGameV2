@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmnv6civjlwke"]
+
+[node name="Button" type="Button"]
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_right = -861.544
+offset_bottom = -484.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Choice"
+icon_alignment = 1

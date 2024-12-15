@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkr5dqtg6cy81"]
+
+[ext_resource type="Script" path="res://scripts/ink_controls.gd" id="1_b5673"]
+
+[node name="Ink_Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b5673")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.017
+anchor_right = 0.976
+anchor_bottom = 0.796
+offset_left = 7.536
+offset_top = 276.984
+offset_right = -828.304
+offset_bottom = -145.808
+scale = Vector2(4, 4)
+text = "Hello World my name is Peter Burke
+"
+autowrap_mode = 2
+justification_flags = 162
+
+[node name="PriorLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.017
+anchor_right = 0.976
+anchor_bottom = 0.796
+offset_left = 5.536
+offset_top = 26.984
+offset_right = -830.304
+offset_bottom = -416.808
+scale = Vector2(4, 4)
+text = "Hello World my name is Peter Burke
+"
+autowrap_mode = 2
+justification_flags = 162
+
+[node name="Choice_Container" type="HBoxContainer" parent="ColorRect"]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.025
+anchor_right = 0.991
+anchor_bottom = 1.26
+offset_left = 7.0
+offset_top = 18.7999
+offset_right = 20.278
+offset_bottom = 18.7163
+alignment = 1
+
+[node name="Close" type="Button" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 493.0
+offset_right = 49.0
+offset_bottom = 646.0
+text = "Close"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.755
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.240051
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -3)
+anchor_mode = 0
+zoom = Vector2(0.5, 0.76)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.006
+anchor_right = 2.003
+anchor_bottom = 1.0
+offset_left = 0.105957
+offset_right = -1105.45
+offset_bottom = -808.0
+scale = Vector2(28.6226, 21.2626)
+color = Color(0.197937, 0.197937, 0.197937, 1)
