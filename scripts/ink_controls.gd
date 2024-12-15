@@ -118,7 +118,7 @@ func _select_choice(index):
 
 func _close_btn():
 	$ColorRect.visible = false
-	$ColorRect2.visible = false
+	#$ColorRect2.visible = false
 	#$Male.visible = false
 	#$Female.visible = false
 	$ColorRect/Close.visible = false

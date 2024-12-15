@@ -19,7 +19,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 5.0
-offset_bottom = 2.0
+offset_bottom = -201.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="ColorRect"]
@@ -57,7 +57,6 @@ autowrap_mode = 2
 justification_flags = 162
 
 [node name="Choice_Container" type="HBoxContainer" parent="ColorRect"]
-top_level = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.025
@@ -78,15 +77,16 @@ offset_right = 49.0
 offset_bottom = 646.0
 text = "Close"
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.755
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -0.240051
+offset_top = 151.515
 offset_right = 4.0
-offset_bottom = 2.0
+offset_bottom = 153.755
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -96,6 +96,7 @@ anchor_mode = 0
 zoom = Vector2(0.5, 0.76)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = -1
