@@ -179,3 +179,14 @@ func _on_load_pressed() -> void:
 func _on_start_over_pressed() -> void:
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") == true:
+		$ColorRect2.visible = true
+	pass
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play(0,0)
+	pass # Replace with function body.

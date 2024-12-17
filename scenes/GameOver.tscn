@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hv34lsfsqsw5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pf1bx"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_pf1bx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

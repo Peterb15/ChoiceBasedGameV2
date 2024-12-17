@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://ylujjkkqon7b"]
+
+[ext_resource type="FontFile" uid="uid://byfeq1c84lnn8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_wiupp"]
+[ext_resource type="FontFile" uid="uid://dai7iwxjel58f" path="res://assets/fonts/PixelOperator8.ttf" id="2_jtplt"]
+
+[sub_resource type="GDScript" id="GDScript_qsgm5"]
+script/source = "extends Node2D
+
+
+
+
+func _on_button_pressed() -> void:
+	load(\"res://scenes/ink_controls.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_qsgm5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = -1487.0
+offset_right = 295.0
+offset_bottom = -1214.0
+scale = Vector2(12.4, 7.88235)
+color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect"]
+position = Vector2(147.661, 139.806)
+zoom = Vector2(0.33, 0.31)
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.85
+anchor_right = 0.701
+anchor_bottom = 0.973
+offset_left = -0.911293
+offset_top = -0.266418
+offset_right = -16.4563
+offset_bottom = 1.15457
+theme_override_fonts/font = ExtResource("1_wiupp")
+theme_override_font_sizes/font_size = 8
+text = "Play Again?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 64.3548
+offset_top = 104.41
+offset_right = 233.355
+offset_bottom = 143.41
+theme_override_fonts/normal_font = ExtResource("2_jtplt")
+text = "You Escaped!"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

@@ -1,13 +1,10 @@
 extends CharacterBody2D
 
 var speed = 300.0
-var door_in_range: Door = null
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and door_in_range != null:
-		print("Interact pressed. Attempting to open door.")
-		door_in_range.open()
+
 	
 	var input_dir = Vector2.ZERO
 
@@ -34,17 +31,3 @@ func _physics_process(delta: float) -> void:
 	# Update the velocity and move
 	velocity = input_dir * speed
 	move_and_slide()
-
-func _on_door_area_entered(area: Area2D):
-	print("Entered door area.")
-	var door = area.get_parent()
-	if door is Door:
-		print("Door detected.")
-		door_in_range = door
-
-func _on_door_area_exited(area: Area2D):
-	print("Exited door area.")
-	var door = area.get_parent()
-	if door_in_range == door:
-		print("Door no longer in range.")
-		door_in_range = null
